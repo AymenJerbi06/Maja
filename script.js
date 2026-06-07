@@ -473,7 +473,7 @@ const localizedCopy = {
       hint: "Hint: nickname for Aymen.",
       placeholder: "Enter the nickname",
       open: "Open",
-      waiting: "The little universe is waiting.",
+      waiting: "",
       wrong: "Hmm... close, but the real ones know the nickname.",
       wrongWithHint: "Still not it. Tiny hint unlocked below: try a nickname starting with H or M.",
       granted: "Access granted. Welcome to a possible future.",
@@ -791,7 +791,7 @@ const localizedCopy = {
       hint: "Podpowiedź: przezwisko Aymena.",
       placeholder: "Wpisz przezwisko",
       open: "Otwórz",
-      waiting: "Mały wszechświat czeka.",
+      waiting: "",
       wrong: "Hmm... blisko, ale prawdziwi znają przezwisko.",
       wrongWithHint: "To nadal nie to. Mała podpowiedź odblokowana niżej: spróbuj przezwiska zaczynającego się na H albo M.",
       granted: "Dostęp przyznany. Witaj w możliwej przyszłości.",
@@ -1591,7 +1591,7 @@ function applyLanguageContent() {
     } else if (state.passwordWrongAttempts > 0) {
       passwordMessage.textContent = copy.gate.wrong;
     } else {
-      passwordMessage.textContent = copy.gate.waiting;
+      passwordMessage.textContent = "";
     }
   }
 

@@ -563,6 +563,10 @@ const localizedCopy = {
       explain:
         "If any of this feels unclear, save the question for Aymen. It will appear in the final review and can be sent to him later through Resend.",
       buttons: ["Aymen, explain credits", "Aymen, explain transfer", "Aymen, explain requirements"],
+      saveButtonHint: "tap to save",
+      savedButtonLabel: "saved",
+      savedNoteDefault: "Tap any option to save it for the final email.",
+      savedNoteSelected: "Saved for Aymen: {items}. These questions will be included in the email.",
     },
     paths: {
       kicker: "Discovery 4",
@@ -862,6 +866,10 @@ const localizedCopy = {
       explain:
         "Jeśli coś z tego jest niejasne, zapisz pytanie dla Aymena. Pojawi się w końcowym podsumowaniu i później może zostać wysłane do niego przez Resend.",
       buttons: ["Aymen, wyjaśnij kredyty", "Aymen, wyjaśnij transfer", "Aymen, wyjaśnij wymagania"],
+      saveButtonHint: "zapisz",
+      savedButtonLabel: "zapisane",
+      savedNoteDefault: "Dotknij dowolnej opcji, żeby zapisać ją do końcowego e-maila.",
+      savedNoteSelected: "Zapisane dla Aymena: {items}. Te pytania zostaną dodane do e-maila.",
     },
     paths: {
       kicker: "Odkrycie 4",
@@ -1385,6 +1393,31 @@ function setButtonTexts(selector, values) {
   });
 }
 
+function renderSystemExplainButtons() {
+  const copy = ui().system;
+  const selectedLabels = [];
+
+  document.querySelectorAll("#system [data-explain-id]").forEach((button, index) => {
+    const saved = Boolean(state.explainRequests[button.dataset.explainId]);
+    const label = copy.buttons[index] || button.dataset.explainLabel || button.textContent;
+
+    button.classList.toggle("is-selected", saved);
+    button.setAttribute("aria-pressed", saved ? "true" : "false");
+    button.dataset.saveHint = saved ? copy.savedButtonLabel : copy.saveButtonHint;
+    button.textContent = label;
+
+    if (saved) selectedLabels.push(label);
+  });
+
+  const note = document.querySelector("#systemExplainSavedNote");
+  if (!note) return;
+
+  note.classList.toggle("is-active", selectedLabels.length > 0);
+  note.textContent = selectedLabels.length
+    ? copy.savedNoteSelected.replace("{items}", selectedLabels.join(", "))
+    : copy.savedNoteDefault;
+}
+
 function localizedRoute(route, key) {
   return isPolish() ? polishRoutes[route.id]?.[key] || route[key] : route[key];
 }
@@ -1555,8 +1588,8 @@ function applyLanguageContent() {
     card.querySelector("h3").textContent = item[0];
     card.querySelector("p").textContent = item[1];
   });
-  setText("#system .explain-panel p", copy.system.explain);
-  setButtonTexts("#system .explain-panel button", copy.system.buttons);
+  setText("#system .explain-panel > p:first-child", copy.system.explain);
+  renderSystemExplainButtons();
 
   setText("#paths .kicker", copy.paths.kicker);
   setText("#paths h2", copy.paths.title);
@@ -2515,6 +2548,11 @@ document.querySelectorAll(".tab-button").forEach((button) => {
 
 backButton.addEventListener("click", previousScreen);
 nextButton.addEventListener("click", nextScreen);
+document.querySelector("[data-maja-warning-accept]")?.addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  nextScreen();
+});
 
 const declineButton = document.querySelector("#declineDecision");
 const acceptButton = document.querySelector("#acceptDecision");

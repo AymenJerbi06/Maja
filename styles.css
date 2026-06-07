@@ -1105,6 +1105,31 @@ h3 {
   margin-top: 12px;
 }
 
+.explain-panel .button-group {
+  margin-top: 16px;
+}
+
+.explain-panel .explain-button {
+  position: relative;
+  padding-right: 22px;
+  cursor: pointer;
+}
+
+.explain-panel .explain-button::before {
+  content: attr(data-save-hint);
+  display: inline-flex;
+  align-items: center;
+  margin-right: 9px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #7a5966;
+  background: rgba(247, 216, 154, 0.4);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .saved-note {
   margin: 12px 0 0;
   color: var(--muted);
@@ -1116,6 +1141,28 @@ h3 {
   border-color: rgba(119, 136, 109, 0.52);
   color: #536044;
   background: rgba(238, 244, 227, 0.9);
+}
+
+.explain-panel .explain-button.is-selected::before {
+  color: #526045;
+  background: rgba(119, 136, 109, 0.2);
+}
+
+.explain-saved-note {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(112, 82, 127, 0.14);
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(255, 253, 248, 0.7);
+  line-height: 1.55;
+}
+
+.explain-saved-note.is-active {
+  border-color: rgba(119, 136, 109, 0.32);
+  color: #536044;
+  background: rgba(238, 244, 227, 0.72);
+  font-weight: 800;
 }
 
 .route-journey {

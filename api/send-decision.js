@@ -78,23 +78,19 @@ function buildEmailText(payload) {
   return lines.join("\n");
 }
 
-export default async function handler(request, response) {
-  if (request.method !== "POST") {
-    response.setHeader("Allow", "POST");
-    return response.status(405).json({ error: "Method not allowed." });
-  }
-
+export async function POST(request) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
   const to = process.env.RESEND_TO_EMAIL;
 
   if (!apiKey || !from || !to) {
-    return response.status(500).json({
-      error: "Missing RESEND_API_KEY, RESEND_FROM_EMAIL, or RESEND_TO_EMAIL.",
-    });
+    return Response.json(
+      { error: "Missing RESEND_API_KEY, RESEND_FROM_EMAIL, or RESEND_TO_EMAIL." },
+      { status: 500 },
+    );
   }
 
-  const payload = typeof request.body === "string" ? JSON.parse(request.body || "{}") : request.body || {};
+  const payload = await request.json().catch(() => ({}));
   const accepted = Boolean(payload.finalDecision?.accepted);
 
   const resendResponse = await fetch("https://api.resend.com/emails", {
@@ -115,11 +111,14 @@ export default async function handler(request, response) {
   const result = await resendResponse.json().catch(() => ({}));
 
   if (!resendResponse.ok) {
-    return response.status(resendResponse.status).json({
-      error: result.message || "Resend could not send the email.",
-      details: result,
-    });
+    return Response.json(
+      {
+        error: result.message || "Resend could not send the email.",
+        details: result,
+      },
+      { status: resendResponse.status },
+    );
   }
 
-  return response.status(200).json({ ok: true, id: result.id });
+  return Response.json({ ok: true, id: result.id });
 }

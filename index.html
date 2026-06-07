@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maja's Vancouver Possibility</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="gate-screen is-active" id="gate" aria-live="polite">
+        <div class="star-field" aria-hidden="true">
+          <span style="--x: 12%; --y: 18%; --d: 0s">✦</span>
+          <span style="--x: 82%; --y: 12%; --d: 1.2s">✧</span>
+          <span style="--x: 72%; --y: 74%; --d: 0.6s">✦</span>
+          <span style="--x: 22%; --y: 82%; --d: 1.8s">✧</span>
+          <span style="--x: 35%; --y: 12%; --d: 2.4s">✦</span>
+          <span style="--x: 91%; --y: 48%; --d: 3.1s">✧</span>
+          <span style="--x: 8%; --y: 62%; --d: 2.9s">✦</span>
+          <span style="--x: 55%; --y: 88%; --d: 3.7s">✧</span>
+          <span style="--x: 46%; --y: 30%; --d: 1.5s">✦</span>
+          <span style="--x: 64%; --y: 9%; --d: 4.2s">✧</span>
+          <span style="--x: 17%; --y: 38%; --d: 3.4s">✦</span>
+          <span style="--x: 86%; --y: 78%; --d: 4.8s">✧</span>
+        </div>
+
+        <article class="gate-card">
+          <div class="gate-hero">
+            <div class="gate-copy">
+              <p class="kicker">For one person only</p>
+              <h1>Hello wifey</h1>
+              <p class="lead gate-dedication">
+                This website is made for <span class="maja-name-target">Maja</span>.
+              </p>
+            </div>
+
+            <figure class="maja-intro-photo" aria-labelledby="majaPhotoCaption">
+              <img src="photos/Maja.jpg" alt="Maja" />
+              <div class="photo-heart-layer" aria-hidden="true"></div>
+              <figcaption class="maja-photo-badge" id="majaPhotoCaption">This beautiful girl.</figcaption>
+            </figure>
+
+            <div class="gate-actions">
+              <div class="language-picker" aria-label="Choose language">
+                <p class="mini-title">Choose language</p>
+                <div class="button-group">
+                  <button class="secondary-button is-selected" type="button" data-language="en">English</button>
+                  <button class="secondary-button" type="button" data-language="pl">Polski</button>
+                </div>
+              </div>
+
+              <form class="password-form" id="passwordForm">
+                <label for="passwordInput">Password</label>
+                <p class="hint">Hint: nickname for Aymen.</p>
+                <div class="password-row">
+                  <input id="passwordInput" type="password" autocomplete="off" placeholder="Enter the nickname" />
+                  <button class="primary-button" type="submit">Open</button>
+                </div>
+                <p class="form-message" id="passwordMessage">The little universe is waiting.</p>
+              </form>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="journey" id="journey" aria-live="polite" hidden>
+        <header class="topbar">
+          <div>
+            <p class="tiny-label">Maja's Vancouver possibility</p>
+            <strong id="progressLabel">1 / 12</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </header>
+
+        <section class="screen is-active" id="maja-intro" data-screen>
+          <div class="content-card maja-question-card">
+            <p class="kicker">Before everything</p>
+            <h2>So first of all...</h2>
+            <p class="lead">Let's introduce Maja properly.</p>
+            <div class="maja-question-line">
+              <span>Who is Maja?</span>
+              <strong>Maja is...</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="maja-warning" data-screen>
+          <div class="content-card warning-card">
+            <p class="kicker">Warning</p>
+            <h2>Content May Steal Hearts</h2>
+            <p class="lead">
+              What you are about to witness is pure sweetness. Possible side effects include
+              smiling too much, falling for her beautiful eyes, and needing emotional recovery tea.
+            </p>
+            <div class="warning-panel">
+              <strong>Important sweetness warning</strong>
+              <p>
+                By continuing, Aymen accepts no responsibility whatsoever for what may happen
+                to your heart when you read about this person or see her beautiful eyes.
+              </p>
+              <button class="primary-button" type="button" data-maja-warning-accept>
+                Accept and continue
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="maja-beauty" data-screen>
+          <div class="content-card split-card maja-profile-card">
+            <div class="maja-profile-copy">
+              <p class="kicker">Introducing Maja</p>
+              <h2>Maja Is...</h2>
+              <p class="lead">
+                Maja is the most beautiful, most caring, sweetest girl, with the most beautiful
+                eyes, the cutest laugh, a cute smile, and a personality as beautiful as her looks.
+              </p>
+              <p class="maja-profile-body">
+                She has a kind soul. She is a Pisces. She was born on February 24, she is
+                19 years old, and she is currently living in Poland.
+              </p>
+            </div>
+
+            <figure class="maja-intro-photo maja-profile-photo" aria-label="Maja">
+              <img src="photos/Maja.jpg" alt="Maja" />
+              <div class="photo-heart-layer" aria-hidden="true"></div>
+              <figcaption class="maja-photo-badge">This beautiful girl.</figcaption>
+            </figure>
+
+            <div class="maja-trait-grid">
+              <article>
+                <span>01</span>
+                <strong>Angel in disguise</strong>
+                <p>Suspiciously sweet, suspiciously pretty, and somehow still real.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <strong>Mossad agent</strong>
+                <p>This is an inside joke, but the evidence remains concerning.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <strong>Probably a witch</strong>
+                <p>Ever since Aymen met her, she captured his heart a little too effectively.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="maja-magic" data-screen>
+          <div class="content-card maja-magic-card">
+            <p class="kicker">What the universe should know</p>
+            <h2>More Evidence About Maja</h2>
+            <p class="lead">
+              She likes math, drawing, the moon, nature, and meaningful beautiful things. She is
+              outgoing, emotional, sweet, curious, and full of little details that make her feel
+              impossible to replace.
+            </p>
+            <div class="maja-soft-grid">
+              <article>
+                <span>Moon</span>
+                <p>She notices beauty in the world, especially the kind that feels quiet and meaningful.</p>
+              </article>
+              <article>
+                <span>Art + math</span>
+                <p>She has both a creative side and a smart analytical side, which is honestly unfair.</p>
+              </article>
+              <article>
+                <span>Husband note</span>
+                <p>
+                  Her husband likes her a lot, cares deeply about her feelings and interests,
+                  and wishes to meet her one day soon. Very soon. Very, very, very, very soon.
+                </p>
+              </article>
+            </div>
+            <p class="maja-final-note">
+              He cannot really picture himself with any other person but her, because her beautiful
+              eyes are the most beautiful thing he has seen yet in this world.
+            </p>
+          </div>
+        </section>
+
+        <section class="screen" id="myth" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 1</p>
+            <h2>The September Myth</h2>
+            <p class="lead">
+              Welcome, Maja. Before the romantic Vancouver daydreaming, there is one
+              practical question worth checking first.
+            </p>
+
+            <div class="question-card">
+              <h3>Can international students only start in September?</h3>
+              <div class="button-group">
+                <button class="secondary-button" data-myth-answer="yes">Yes</button>
+                <button class="secondary-button" data-myth-answer="maybe">Wait... maybe not?</button>
+              </div>
+              <div class="reveal-box" id="mythReveal">
+                <p>Choose an answer and the map will unfold.</p>
+              </div>
+            </div>
+
+            <p class="disclaimer">
+              Important: exact intakes depend on the institution, program, seat availability,
+              deadlines, and study permit timing.
+            </p>
+          </div>
+        </section>
+
+        <section class="screen" id="finder" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 2</p>
+            <h2>Maja Path Finder</h2>
+            <p class="lead">
+              What sounds like you? Pick as many as you want. This step is only about
+              your interests, not schools or decisions yet.
+            </p>
+
+            <div class="interest-grid" id="interestGrid">
+              <button class="interest-chip" data-interest="chemistry">Chemistry 🔬</button>
+              <button class="interest-chip" data-interest="math">Math 📐</button>
+              <button class="interest-chip" data-interest="drawing">Drawing / Design 🎨</button>
+              <button class="interest-chip" data-interest="reading">Reading / English 📚</button>
+              <button class="interest-chip" data-interest="nature">Nature 🌿</button>
+              <button class="interest-chip" data-interest="travel">Travel / Exploration 🧭</button>
+              <button class="interest-chip" data-interest="unsure">Not sure yet 🌙</button>
+            </div>
+
+            <div class="flow-guide">
+              <p class="mini-title">How the next screens work</p>
+              <div class="flow-steps">
+                <article>
+                  <span>01</span>
+                  <p>First, the website explains how Canadian university actually works.</p>
+                </article>
+                <article>
+                  <span>02</span>
+                  <p><strong>Choose route</strong> saves the academic path that feels most interesting.</p>
+                </article>
+                <article>
+                  <span>03</span>
+                  <p><strong>Aymen, explain</strong> saves the question so Aymen knows what to explain later.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="system" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 3</p>
+            <h2>How Canadian University Works</h2>
+            <p class="lead">
+              The Canadian system can look strange from outside. This page is the calm
+              translation before any school names, costs, or deadlines appear.
+            </p>
+
+            <div class="system-grid">
+              <article>
+                <span>01</span>
+                <h3>Programs are built from credits</h3>
+                <p>
+                  A bachelor's degree often needs about 120 credits or more. Engineering
+                  programs can be heavier. A normal course is usually 3 credits; courses
+                  with labs can be 4 credits or more.
+                </p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Not every course is your major</h3>
+                <p>
+                  Even engineering or science students usually need writing, humanities,
+                  language, social science, breadth, or complementary courses. You graduate
+                  only when the full checklist is complete.
+                </p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>College can be a first step</h3>
+                <p>
+                  Some students begin at a college, take university-level courses, then
+                  move into a university degree. The important part is choosing courses
+                  that the future university can accept.
+                </p>
+              </article>
+              <article>
+                <span>04</span>
+                <h3>Transfer means carrying courses forward</h3>
+                <p>
+                  If a course transfers, it may count toward the next school's degree.
+                  This is why course planning matters. One wrong course is not the end
+                  of the world, but good planning saves time and money.
+                </p>
+              </article>
+              <article>
+                <span>05</span>
+                <h3>Applications check requirements</h3>
+                <p>
+                  Schools may ask for transcripts, translations, English proof, math or
+                  science prerequisites, a portfolio for design, an application fee, and
+                  sometimes program-specific forms.
+                </p>
+              </article>
+              <article>
+                <span>06</span>
+                <h3>International students plan twice</h3>
+                <p>
+                  First comes school admission. Then comes the study permit: acceptance
+                  letter, PAL/TAL if required, proof of funds, identity documents, and
+                  enough time for processing.
+                </p>
+              </article>
+            </div>
+
+            <div class="explain-panel">
+              <p>
+                If any of this feels unclear, save the question for Aymen. It will appear
+                in the final review and can be sent to him later through Resend.
+              </p>
+              <div class="button-group">
+                <button class="text-button" data-explain-id="credits" data-explain-label="Explain credits and courses">Aymen, explain credits</button>
+                <button class="text-button" data-explain-id="transfer" data-explain-label="Explain college to university transfer">Aymen, explain transfer</button>
+                <button class="text-button" data-explain-id="requirements" data-explain-label="Explain admission requirements">Aymen, explain requirements</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="paths" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 4</p>
+            <h2>Recommended Academic Paths</h2>
+            <p class="lead">
+              Now that the system makes more sense, the route options can appear. They
+              are shown as simple journeys: foundation, university, then graduation.
+              The exact school names come after this.
+            </p>
+            <div class="path-grid" id="pathGrid"></div>
+          </div>
+        </section>
+
+        <section class="screen" id="schools" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 5</p>
+            <h2>School Options</h2>
+            <p class="lead">
+              Now the names can appear. Short version first; tap a card if you want the
+              cost, cautions, sources, and next action.
+            </p>
+            <p class="currency-note">
+              PLN estimates are approximate, using about 1 CAD = 2.62 PLN from recent ECB
+              reference rates. Final payments always use the school's real payment rate.
+            </p>
+
+            <div class="compare-row" id="compareRow" aria-label="Compare schools">
+              <button class="filter-button is-active" data-filter="all">All</button>
+              <button class="filter-button" data-filter="cheap">Budget-friendly</button>
+              <button class="filter-button" data-filter="close">Closest to Aymen</button>
+              <button class="filter-button" data-filter="flexible">Most flexible</button>
+              <button class="filter-button" data-filter="engineering">Best for engineering</button>
+              <button class="filter-button" data-filter="design">Best for design</button>
+            </div>
+
+            <div class="school-strip" id="schoolCards"></div>
+          </div>
+        </section>
+
+        <section class="screen" id="budget" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 6</p>
+            <h2>Cost Reality Without Fear</h2>
+            <p class="lead">
+              Vancouver asks for careful financial planning. I will not pretend it is tiny.
+              But we can compare the options calmly and plan it properly.
+            </p>
+
+            <div class="tabs" role="tablist" aria-label="Budget views">
+              <button class="tab-button is-active" data-budget="careful">Careful budget</button>
+              <button class="tab-button" data-budget="realistic">Realistic Vancouver budget</button>
+            </div>
+
+            <div class="budget-card" id="budgetCard"></div>
+
+            <div class="honesty-note">
+              <h3>Study permit and money reality</h3>
+              <p>
+                IRCC requires proof of tuition, living expenses, and travel. For applications
+                on or after September 1, 2025, the baseline living-expense amount outside Quebec
+                is $22,895 CAD, about 59,985 PLN at the approximate rate used here, for one
+                applicant, excluding tuition and travel. Treat it as a minimum, not comfortable
+                Vancouver spending.
+              </p>
+              <p class="currency-note">
+                PLN estimates use about 1 CAD = 2.62 PLN. They are here for intuition, not for
+                payment or visa calculations.
+              </p>
+              <ul class="soft-list">
+                <li>Tuition is usually paid by term or according to the school's fee deadline.</li>
+                <li>A deposit may be needed to accept an offer or unlock next steps like PAL/TAL.</li>
+                <li>Proof of funds can include bank statements, sponsor support, scholarships, or other accepted proof.</li>
+                <li>The study permit is separate from school admission; acceptance does not automatically mean visa approval.</li>
+              </ul>
+              <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html" target="_blank" rel="noreferrer">Check the official IRCC proof-of-funds page</a>
+            </div>
+
+            <div class="comparison-note" id="budgetComparison">
+              <p class="mini-title">Cost context</p>
+              <h3>Vancouver is not the only serious budget</h3>
+              <p class="comparison-lead">
+                Chicago may sound familiar, but many U.S. university paths can ask for a
+                much bigger yearly budget than a Vancouver college-first route. The fair
+                question is not "is Vancouver free?" It is "which path gives Maja the most
+                support, flexibility, and value for the money?"
+              </p>
+              <ul class="soft-list">
+                <li>Some Chicago private university examples list tuition alone around $48,000-$72,000 USD before the full living budget is added.</li>
+                <li>A Vancouver college-first path can begin with a lower tuition base in CAD, then transfer into university later if the courses are planned well.</li>
+                <li>In Vancouver, Maja would also know someone already involved in student life, course planning, transfers, deadlines, and everyday campus questions.</li>
+              </ul>
+              <div class="source-list" id="budgetComparisonLinks">
+                <a href="https://news.northwestern.edu/stories/2026/05/northwestern-sets-tuition-and-fees-for-2026-2027-academic-year" target="_blank" rel="noreferrer">Northwestern 2026-2027 costs</a>
+                <a href="https://www.depaul.edu/tuition-and-aid/undergraduate-tuition-and-fees" target="_blank" rel="noreferrer">DePaul undergraduate tuition</a>
+                <a href="https://www.depaul.edu/tuition-and-aid/understand-cost-of-attendance" target="_blank" rel="noreferrer">DePaul cost of attendance</a>
+                <a href="https://registrar.uic.edu/financial-matters/undergraduate-tuition-and-fees/" target="_blank" rel="noreferrer">UIC tuition reference</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="paperwork" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 6 continued</p>
+            <h2>Application And Study Permit Map</h2>
+            <p class="lead">
+              This is the practical part, but it does not have to feel like paperwork.
+              Think of it like a small treasure map: every stop brings Maja closer to
+              Vancouver and studying here.
+            </p>
+            <div class="treasure-map" id="paperworkList" aria-label="Application treasure map"></div>
+          </div>
+        </section>
+
+        <section class="screen" id="playground" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 7</p>
+            <h2>Vancouver As Her Playground</h2>
+            <p class="lead">
+              You said you love everything involving nature. Vancouver is basically nature
+              showing off: ocean, mountains, rain, forests, sunsets, beaches, and places where
+              we can sit at night and talk under the moon.
+            </p>
+            <div class="personal-walk">
+              <h3>Aymen's same-day Vancouver walk</h3>
+              <p>
+                These are photos Aymen took personally in Vancouver. They were taken on the
+                same day, without even using transit. Around 15,000 steps were enough to move
+                between downtown, beaches, water, parks, mountains, nature, and open sky.
+              </p>
+              <p>
+                The point is simple: in Vancouver, beautiful places are close to each other.
+                A normal day can quietly turn into an adventure.
+              </p>
+            </div>
+            <div class="photo-gallery" id="vancouverGallery" aria-label="Personal Vancouver photos"></div>
+            <p class="saved-note">
+              Your yes/maybe/Aymen-explain answers here will be saved for the final review
+              and can be sent to Aymen by email later.
+            </p>
+            <div class="activity-grid" id="activityGrid"></div>
+          </div>
+        </section>
+
+        <section class="screen" id="canada" data-screen>
+          <div class="content-card split-card">
+            <div>
+              <p class="kicker">Discovery 8</p>
+              <h2>Why This Is Not Just About Canada</h2>
+              <p class="lead">
+                Canada has real flaws, real costs, and real questions. But sometimes a place
+                becomes more meaningful because of the person you explore it with.
+              </p>
+              <p>
+                If Vancouver raises concerns about family, future children, money, distance, or
+                belonging, those concerns deserve a real conversation instead of a quick answer.
+              </p>
+            </div>
+            <div class="quote-card">
+              <p>Honesty note</p>
+              <strong>Vancouver is beautiful, financially serious, complicated, and worth understanding properly.</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="aymen" data-screen>
+          <div class="content-card split-card husband-card">
+            <div>
+              <p class="kicker">Discovery 9</p>
+              <h2>The Husband Reason</h2>
+              <p class="lead">
+                Final reason: your husband is here. He likes your personality, your eyes, your weirdness,
+                your honesty, your respect for yourself, your love for the moon, and the way you
+                notice beauty most people ignore.
+              </p>
+              <p>
+                He misses his wife. He wants to watch the moon with you, help you compare universities, get lost in
+                cafés, talk about everything at night, and make Vancouver feel a little less far
+                from home.
+              </p>
+              <div class="husband-values">
+                <p class="mini-title">Small husband resume</p>
+                <ul>
+                  <li>Well-educated, well-mannered, and serious about building a good future.</li>
+                  <li>Respects his family and parents, and puts career, family, religious values, principles, and ethics above everything.</li>
+                  <li>Sweet, charming, caring, and the type of person who gives everything for the people he truly cares about, especially her.</li>
+                  <li>Handsome, active, healthy, muscular, with soccer legs, abs, biceps, and enough confidence to say this twice.</li>
+                  <li>Plays soccer in Canada too, so she can watch him play and politely destroy other teams.</li>
+                </ul>
+              </div>
+              <p class="husband-effort">
+                Most importantly, this is not a random person playing games, manipulating her,
+                or love-bombing her for a funny time. He is genuinely interested in her: her
+                beautiful eyes, her cute laugh, her mind, and the person she is. When she was
+                on a boat trip, he spent that whole time thinking, implementing, styling, and
+                building this website because she asked for a list of universities and he did
+                not want to make it boring. He wanted to make it an experience, because the
+                effort shows how much she matters to him.
+              </p>
+            </div>
+            <figure class="image-note husband-photo-note">
+              <img src="photos/Little Aymen (Aymen as a kid ) in discovery 7 of the website.jpg" alt="Aymen as a child" />
+              <figcaption>
+                Little Aymen, attempting charm before he even knew what Vancouver was.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="screen" id="window" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 10</p>
+            <h2>Things We Can Talk About</h2>
+            <p class="lead">
+              Any concern can be talked about later if you want: money, family, distance,
+              school, deadlines, fear, excitement, all of it. This website is here to show
+              effort, care, and interest, while leaving room for every question.
+            </p>
+
+            <div class="talk-guide">
+              <p class="mini-title">Pick anything you want us to talk through</p>
+              <p>
+                Each selected topic will be saved for the final review, so your husband knows what
+                you may want to discuss later.
+              </p>
+            </div>
+
+            <div class="promise-grid talk-topic-grid" id="talkTopicGrid"></div>
+          </div>
+        </section>
+
+        <section class="screen" id="deadlines" data-screen>
+          <div class="content-card">
+            <p class="kicker">Discovery 11</p>
+            <h2>Deadline Awareness</h2>
+            <p class="lead">
+              Deadlines are not here to rush you. They are here so the calendar feels visible
+              instead of mysterious.
+            </p>
+
+            <div class="deadline-panel">
+              <h3>Example application windows</h3>
+              <p>
+                These are examples from current official pages or recent posted cycles.
+                Program rules can change, so the final check should always happen on the
+                school website before applying.
+              </p>
+              <div class="deadline-grid" id="deadlineCards"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="decision" data-screen>
+          <div class="content-card decision-card">
+            <p class="kicker">Decision screen</p>
+            <h2>Do you accept exploring the Vancouver possibility?</h2>
+            <p class="lead">
+              Before you choose, here is the little review of what you selected.
+            </p>
+
+            <div class="review-panel" id="decisionReview"></div>
+
+            <div class="decision-actions">
+              <button class="primary-button" id="acceptDecision">I accept the mission</button>
+              <button class="decline-button" id="declineDecision">Not yet</button>
+            </div>
+            <p class="form-message" id="declineMessage"></p>
+            <button class="respect-button" id="respectDecision" hidden>Okay, I want to think about it.</button>
+          </div>
+        </section>
+
+        <section class="screen" id="success" data-screen>
+          <div class="content-card success-card">
+            <p class="kicker">Final page</p>
+            <h2 id="successHeadline">Congratulations, Maja.</h2>
+            <p class="lead" id="successSubtitle">
+              Aymen has been notified that you accepted the Vancouver possibility.
+            </p>
+            <div class="balloons" aria-hidden="true">🎈 ✨ 🎈 ✨ 🎈</div>
+
+            <div class="summary-grid">
+              <article>
+                <p class="mini-title">Chosen path</p>
+                <strong id="summaryPath">Flexible transfer year</strong>
+              </article>
+              <article>
+                <p class="mini-title">Possible schools</p>
+                <strong id="summarySchools">Douglas + Langara + KPU + SFU/UBC later</strong>
+              </article>
+              <article>
+                <p class="mini-title">Next step</p>
+                <strong id="summaryNext">Compare January/Winter options.</strong>
+              </article>
+            </div>
+
+            <div class="review-panel success-review" id="successReview"></div>
+
+            <p class="final-line">
+              Thank you for going through the website. Your answers are saved and ready
+              for the Resend email hook Aymen will connect later.
+            </p>
+
+            <div class="source-list">
+              <a href="https://www.bctransferguide.ca/" target="_blank" rel="noreferrer">BC Transfer Guide</a>
+              <a href="https://www.educationplannerbc.ca/" target="_blank" rel="noreferrer">EducationPlannerBC</a>
+              <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html" target="_blank" rel="noreferrer">IRCC study permit documents</a>
+              <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.pt.html" target="_blank" rel="noreferrer">ECB exchange-rate reference</a>
+            </div>
+          </div>
+        </section>
+
+        <nav class="journey-nav" aria-label="Journey controls">
+          <button class="nav-button" id="backButton">Back</button>
+          <button class="nav-button primary-nav" id="nextButton">Next</button>
+        </nav>
+      </section>
+
+      <aside class="debug-panel" id="debugPanel" hidden>
+        <div>
+          <strong>Debug mode</strong>
+          <button id="closeDebug" aria-label="Close debug panel">×</button>
+        </div>
+        <pre id="debugOutput"></pre>
+      </aside>
+    </main>
+
+    <div class="river-scene" aria-hidden="true"></div>
+
+    <div class="twinkle-layer" aria-hidden="true">
+      <span style="--x: 8%; --y: 18%; --delay: -0.2s; --size: 1rem"></span>
+      <span style="--x: 22%; --y: 76%; --delay: -1.1s; --size: 0.8rem"></span>
+      <span style="--x: 48%; --y: 14%; --delay: -2.4s; --size: 1.15rem"></span>
+      <span style="--x: 71%; --y: 63%; --delay: -3.6s; --size: 0.9rem"></span>
+      <span style="--x: 88%; --y: 29%; --delay: -4.2s; --size: 1rem"></span>
+      <span style="--x: 61%; --y: 87%; --delay: -0.7s; --size: 0.75rem"></span>
+      <span style="--x: 15%; --y: 45%; --delay: -2.9s; --size: 0.7rem"></span>
+      <span style="--x: 31%; --y: 23%; --delay: -1.8s; --size: 0.95rem"></span>
+      <span style="--x: 42%; --y: 68%; --delay: -3.1s; --size: 0.78rem"></span>
+      <span style="--x: 57%; --y: 39%; --delay: -4.6s; --size: 0.86rem"></span>
+      <span style="--x: 77%; --y: 19%; --delay: -0.4s; --size: 1.05rem"></span>
+      <span style="--x: 92%; --y: 72%; --delay: -2.2s; --size: 0.76rem"></span>
+      <span style="--x: 6%; --y: 88%; --delay: -3.9s; --size: 0.82rem"></span>
+      <span style="--x: 67%; --y: 8%; --delay: -1.4s; --size: 0.68rem"></span>
+      <span style="--x: 12%; --y: 31%; --delay: -4.8s; --size: 0.72rem"></span>
+      <span style="--x: 19%; --y: 58%; --delay: -0.9s; --size: 1.08rem"></span>
+      <span style="--x: 27%; --y: 11%; --delay: -2.6s; --size: 0.64rem"></span>
+      <span style="--x: 34%; --y: 86%; --delay: -3.4s; --size: 0.92rem"></span>
+      <span style="--x: 39%; --y: 43%; --delay: -1.6s; --size: 0.74rem"></span>
+      <span style="--x: 51%; --y: 26%; --delay: -4.1s; --size: 0.84rem"></span>
+      <span style="--x: 55%; --y: 81%; --delay: -2.1s; --size: 1.12rem"></span>
+      <span style="--x: 63%; --y: 52%; --delay: -0.5s; --size: 0.7rem"></span>
+      <span style="--x: 69%; --y: 35%; --delay: -3.8s; --size: 0.98rem"></span>
+      <span style="--x: 74%; --y: 91%; --delay: -1.9s; --size: 0.66rem"></span>
+      <span style="--x: 82%; --y: 44%; --delay: -2.7s; --size: 0.88rem"></span>
+      <span style="--x: 96%; --y: 15%; --delay: -4.4s; --size: 0.73rem"></span>
+      <span style="--x: 4%; --y: 52%; --delay: -1.3s; --size: 0.62rem"></span>
+      <span style="--x: 24%; --y: 4%; --delay: -3.2s; --size: 0.82rem"></span>
+      <span style="--x: 45%; --y: 93%; --delay: -0.8s; --size: 0.7rem"></span>
+      <span style="--x: 53%; --y: 6%; --delay: -2.5s; --size: 0.96rem"></span>
+      <span style="--x: 73%; --y: 6%; --delay: -1.7s; --size: 0.69rem"></span>
+      <span style="--x: 86%; --y: 84%; --delay: -3.5s; --size: 0.91rem"></span>
+      <span style="--x: 97%; --y: 55%; --delay: -0.1s; --size: 0.8rem"></span>
+      <span style="--x: 2%; --y: 8%; --delay: -2.8s; --size: 1.02rem"></span>
+    </div>
+
+    <div id="galleryLightboxRoot"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Maja's Vancouver Possibility</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260607-selection-comments" />
   </head>
   <body>
     <main class="app-shell">
@@ -216,6 +216,7 @@
               What sounds like you? Pick as many as you want. This step is only about
               your interests, not schools or decisions yet.
             </p>
+            <p class="selection-note">Your selected interests are saved for the final review.</p>
 
             <div class="interest-grid" id="interestGrid">
               <button class="interest-chip" data-interest="chemistry">Chemistry 🔬</button>
@@ -337,6 +338,7 @@
               are shown as simple journeys: foundation, university, then graduation.
               The exact school names come after this.
             </p>
+            <p class="selection-note">Choose one route. That choice is saved and reviewed before submitting.</p>
             <div class="path-grid" id="pathGrid"></div>
           </div>
         </section>
@@ -349,6 +351,7 @@
               Now the names can appear. Short version first; tap a card if you want the
               cost, cautions, sources, and next action.
             </p>
+            <p class="selection-note">Filters only help browsing. Only schools you save for comparison are sent at the end.</p>
             <p class="currency-note">
               PLN estimates are approximate, using about 1 CAD = 2.62 PLN from recent ECB
               reference rates. Final payments always use the school's real payment rate.
@@ -375,6 +378,7 @@
               Vancouver asks for careful financial planning. I will not pretend it is tiny.
               But we can compare the options calmly and plan it properly.
             </p>
+            <p class="selection-note">Choose the budget view you want Aymen to see in the final email.</p>
 
             <div class="tabs" role="tablist" aria-label="Budget views">
               <button class="tab-button is-active" data-budget="careful">Careful budget</button>
@@ -590,6 +594,19 @@
 
             <div class="review-panel" id="decisionReview"></div>
 
+            <div class="submission-comment-panel">
+              <label for="decisionComment">Comments before submitting</label>
+              <p>
+                Write anything you want Aymen to receive with your answers. This will be
+                included in the email.
+              </p>
+              <textarea
+                id="decisionComment"
+                rows="5"
+                placeholder="Questions, thoughts, concerns, jokes, anything..."
+              ></textarea>
+            </div>
+
             <div class="decision-actions">
               <button class="primary-button" id="acceptDecision">I accept the mission</button>
               <button class="decline-button" id="declineDecision">Not yet</button>
@@ -695,6 +712,6 @@
 
     <div id="galleryLightboxRoot"></div>
 
-    <script src="script.js?v=20260607-explain-buttons-2"></script>
+    <script src="script.js?v=20260607-selection-comments"></script>
   </body>
 </html>

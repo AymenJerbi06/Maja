@@ -540,6 +540,7 @@ const localizedCopy = {
       kicker: "Discovery 2",
       title: "Maja Path Finder",
       lead: "What sounds like you? Pick as many as you want. This step is only about your interests, not schools or decisions yet.",
+      selectionNote: "Your selected interests are saved for the final review.",
       guideTitle: "How the next screens work",
       steps: [
         "First, the website explains how Canadian university actually works.",
@@ -573,6 +574,7 @@ const localizedCopy = {
       title: "Recommended Academic Paths",
       lead:
         "Now that the system makes more sense, the route options can appear. They are shown as simple journeys: foundation, university, then graduation. The exact school names come after this.",
+      selectionNote: "Choose one route. That choice is saved and reviewed before submitting.",
       suggestedRoute: "Suggested route",
       chooseRoute: "Choose route",
       chosenRoute: "Chosen route",
@@ -583,6 +585,7 @@ const localizedCopy = {
       kicker: "Discovery 5",
       title: "School Options",
       lead: "Now the names can appear. Short version first; tap a card if you want the cost, cautions, sources, and next action.",
+      selectionNote: "Filters only help browsing. Only schools you save for comparison are sent at the end.",
       currency:
         "PLN estimates are approximate, using about 1 CAD = 2.62 PLN from recent ECB reference rates. Final payments always use the school's real payment rate.",
       filters: ["All", "Budget-friendly", "Closest to Aymen", "Most flexible", "Best for engineering", "Best for design"],
@@ -600,6 +603,7 @@ const localizedCopy = {
       kicker: "Discovery 6",
       title: "Cost Reality Without Fear",
       lead: "Vancouver asks for careful financial planning. I will not pretend it is tiny. But we can compare the options calmly and plan it properly.",
+      selectionNote: "Choose the budget view you want Aymen to see in the final email.",
       tabs: ["Careful budget", "Realistic Vancouver budget"],
       noteTitle: "Study permit and money reality",
       note:
@@ -716,6 +720,9 @@ const localizedCopy = {
       kicker: "Decision screen",
       title: "Do you accept exploring the Vancouver possibility?",
       lead: "Before you choose, here is the little review of what you selected.",
+      commentTitle: "Comments before submitting",
+      commentBody: "Write anything you want Aymen to receive with your answers. This will be included in the email.",
+      commentPlaceholder: "Questions, thoughts, concerns, jokes, anything...",
       accept: "I accept the mission",
       decline: "Not yet",
       respect: "Okay, I want to think about it.",
@@ -744,18 +751,20 @@ const localizedCopy = {
       activities: "Vancouver activities",
       talkTopics: "Things to talk about",
       explainRequests: "Aymen explain requests",
+      comments: "Comments before submitting",
       emptyInterests: "Nothing selected yet",
       emptySchools: "No school saved yet",
       emptyActivities: "No Vancouver activities selected yet",
       emptyTalkTopics: "No talk topics selected yet",
       emptyExplain: "No explain requests saved yet",
+      emptyComments: "No comments written yet",
     },
     declineMessages: [
-      "The universe disagrees.",
-      "The moon said try again.",
-      "Aymen is negotiating with destiny.",
-      "The button is getting smaller. Suspicious.",
-      "Still visible. Technically.",
+      "Really? Please think about it.",
+      "Are you sure? Maybe give the idea one more gentle thought.",
+      "Please, please think about it again.",
+      "Okay, one more tiny reconsideration before deciding?",
+      "I hear you. If it is still not yet, you can choose time to think.",
     ],
   },
   pl: {
@@ -843,6 +852,7 @@ const localizedCopy = {
       kicker: "Odkrycie 2",
       title: "Maja Path Finder",
       lead: "Co brzmi jak Ty? Wybierz tyle rzeczy, ile chcesz. Ten krok dotyczy tylko Twoich zainteresowań, jeszcze nie szkół ani decyzji.",
+      selectionNote: "Wybrane zainteresowania zostaną zapisane do końcowego przeglądu.",
       guideTitle: "Jak działają następne ekrany",
       steps: [
         "Najpierw strona wyjaśnia, jak naprawdę działa kanadyjski system uniwersytecki.",
@@ -876,6 +886,7 @@ const localizedCopy = {
       title: "Polecane ścieżki akademickie",
       lead:
         "Teraz, kiedy system ma więcej sensu, mogą pojawić się opcje. Są pokazane jako proste podróże: podstawa, uniwersytet, ukończenie. Dokładne nazwy szkół pojawią się później.",
+      selectionNote: "Wybierz jedną ścieżkę. Ten wybór zostanie zapisany i pokazany przed wysłaniem.",
       suggestedRoute: "Sugerowana ścieżka",
       chooseRoute: "Wybierz ścieżkę",
       chosenRoute: "Wybrana ścieżka",
@@ -886,6 +897,7 @@ const localizedCopy = {
       kicker: "Odkrycie 5",
       title: "Opcje szkół",
       lead: "Teraz mogą pojawić się nazwy. Najpierw krótka wersja; kliknij kartę, jeśli chcesz zobaczyć koszt, uwagi, źródła i następny krok.",
+      selectionNote: "Filtry pomagają tylko przeglądać. Do końcowego e-maila trafią tylko szkoły zapisane do porównania.",
       currency:
         "Szacunki w PLN są przybliżone, przy użyciu około 1 CAD = 2,62 PLN według niedawnych kursów referencyjnych ECB. Rzeczywiste płatności zawsze zależą od prawdziwego kursu płatności szkoły.",
       filters: ["Wszystkie", "Najbardziej budżetowe", "Najbliżej Aymena", "Najbardziej elastyczne", "Najlepsze dla inżynierii", "Najlepsze dla designu"],
@@ -903,6 +915,7 @@ const localizedCopy = {
       kicker: "Odkrycie 6",
       title: "Koszty bez straszenia",
       lead: "Vancouver wymaga uważnego planowania finansów. Nie będę udawać, że to drobiazg. Ale można spokojnie porównać opcje i dobrze to zaplanować.",
+      selectionNote: "Wybierz widok budżetu, który Aymen ma zobaczyć w końcowym e-mailu.",
       tabs: ["Ostrożny budżet", "Realistyczny budżet Vancouver"],
       noteTitle: "Study permit i rzeczywistość finansowa",
       note:
@@ -1019,6 +1032,9 @@ const localizedCopy = {
       kicker: "Ekran decyzji",
       title: "Czy akceptujesz odkrywanie możliwości Vancouver?",
       lead: "Zanim wybierzesz, tutaj jest mały przegląd tego, co zaznaczyłaś.",
+      commentTitle: "Komentarz przed wysłaniem",
+      commentBody: "Napisz cokolwiek chcesz, żeby Aymen dostał razem z Twoimi odpowiedziami. To będzie dodane do e-maila.",
+      commentPlaceholder: "Pytania, myśli, obawy, żarty, cokolwiek...",
       accept: "Akceptuję misję",
       decline: "Jeszcze nie",
       respect: "Dobrze, chcę o tym pomyśleć.",
@@ -1047,18 +1063,20 @@ const localizedCopy = {
       activities: "Aktywności w Vancouver",
       talkTopics: "Rzeczy do rozmowy",
       explainRequests: "Prośby o wyjaśnienie dla Aymena",
+      comments: "Komentarz przed wysłaniem",
       emptyInterests: "Jeszcze nic nie wybrano",
       emptySchools: "Nie zapisano jeszcze żadnej szkoły",
       emptyActivities: "Nie wybrano jeszcze aktywności w Vancouver",
       emptyTalkTopics: "Nie wybrano jeszcze tematów rozmowy",
       emptyExplain: "Nie zapisano jeszcze próśb o wyjaśnienie",
+      emptyComments: "Nie napisano jeszcze komentarza",
     },
     declineMessages: [
-      "Wszechświat się nie zgadza.",
-      "Księżyc mówi: spróbuj jeszcze raz.",
-      "Aymen negocjuje z przeznaczeniem.",
-      "Przycisk robi się mniejszy. Podejrzane.",
-      "Nadal widoczny. Technicznie.",
+      "Naprawdę? Proszę, pomyśl o tym.",
+      "Jesteś pewna? Może daj tej myśli jeszcze jedną spokojną szansę.",
+      "Proszę, proszę, pomyśl o tym jeszcze raz.",
+      "Dobrze, jeszcze jedno małe zastanowienie przed decyzją?",
+      "Rozumiem. Jeśli nadal jeszcze nie, możesz wybrać czas do namysłu.",
     ],
   },
 };
@@ -1293,6 +1311,7 @@ const defaultState = {
   notYetClicked: false,
   notYetClickCount: 0,
   notYetLastClickedAt: "",
+  submissionComment: "",
   finalDecision: null,
   createdAt: new Date().toISOString(),
 };
@@ -1391,6 +1410,15 @@ function setButtonTexts(selector, values) {
   document.querySelectorAll(selector).forEach((button, index) => {
     if (values[index]) button.textContent = values[index];
   });
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 function renderSystemExplainButtons() {
@@ -1574,6 +1602,7 @@ function applyLanguageContent() {
   setText("#finder .kicker", copy.finder.kicker);
   setText("#finder h2", copy.finder.title);
   setText("#finder .lead", copy.finder.lead);
+  setText("#finder .selection-note", copy.finder.selectionNote);
   setText("#finder .flow-guide .mini-title", copy.finder.guideTitle);
   document.querySelectorAll("#finder .flow-steps article p").forEach((paragraph, index) => {
     paragraph.innerHTML = copy.finder.steps[index] || paragraph.innerHTML;
@@ -1594,16 +1623,19 @@ function applyLanguageContent() {
   setText("#paths .kicker", copy.paths.kicker);
   setText("#paths h2", copy.paths.title);
   setText("#paths .lead", copy.paths.lead);
+  setText("#paths .selection-note", copy.paths.selectionNote);
 
   setText("#schools .kicker", copy.schools.kicker);
   setText("#schools h2", copy.schools.title);
   setText("#schools .lead", copy.schools.lead);
+  setText("#schools .selection-note", copy.schools.selectionNote);
   setText("#schools .currency-note", copy.schools.currency);
   setButtonTexts("#compareRow button", copy.schools.filters);
 
   setText("#budget .kicker", copy.budget.kicker);
   setText("#budget h2", copy.budget.title);
   setText("#budget .lead", copy.budget.lead);
+  setText("#budget .selection-note", copy.budget.selectionNote);
   setButtonTexts("#budget .tab-button", copy.budget.tabs);
   setText("#budget .honesty-note h3", copy.budget.noteTitle);
   setText("#budget .honesty-note > p:not(.currency-note)", copy.budget.note);
@@ -1673,6 +1705,10 @@ function applyLanguageContent() {
   setText("#decision .kicker", copy.decision.kicker);
   setText("#decision h2", copy.decision.title);
   setText("#decision .lead", copy.decision.lead);
+  setText("#decision .submission-comment-panel label", copy.decision.commentTitle);
+  setText("#decision .submission-comment-panel p", copy.decision.commentBody);
+  const decisionComment = document.querySelector("#decisionComment");
+  if (decisionComment) decisionComment.placeholder = copy.decision.commentPlaceholder;
   setText("#acceptDecision", copy.decision.accept);
   setText("#declineDecision", copy.decision.decline);
   setText("#respectDecision", copy.decision.respect);
@@ -2345,8 +2381,21 @@ function buildReviewHtml(context = "decision") {
         <p class="mini-title">${copy.explainRequests}</p>
         <strong>${listOrEmpty(explainRequests, copy.emptyExplain)}</strong>
       </article>
+      <article>
+        <p class="mini-title">${copy.comments}</p>
+        <strong>${state.submissionComment?.trim() ? escapeHtml(state.submissionComment.trim()) : copy.emptyComments}</strong>
+      </article>
     </div>
   `;
+}
+
+function renderDecisionComment() {
+  const textarea = document.querySelector("#decisionComment");
+  if (!textarea) return;
+
+  if (document.activeElement !== textarea && textarea.value !== (state.submissionComment || "")) {
+    textarea.value = state.submissionComment || "";
+  }
 }
 
 function renderDecisionReview() {
@@ -2400,6 +2449,7 @@ function renderDebug() {
         clickCount: state.notYetClickCount,
         lastClickedAt: state.notYetLastClickedAt,
       },
+      submissionComment: state.submissionComment,
       currency: {
         cadToPlnRate: CAD_TO_PLN_RATE,
         note: CAD_TO_PLN_SOURCE,
@@ -2428,6 +2478,7 @@ function renderAll() {
   renderVancouverGallery();
   renderActivities();
   renderDecisionReview();
+  renderDecisionComment();
   updateDecisionButtonState();
   renderDebug();
 }
@@ -2546,6 +2597,12 @@ document.querySelectorAll(".tab-button").forEach((button) => {
   });
 });
 
+document.querySelector("#decisionComment")?.addEventListener("input", (event) => {
+  state.submissionComment = event.target.value;
+  saveState();
+  renderDecisionReview();
+});
+
 backButton.addEventListener("click", previousScreen);
 nextButton.addEventListener("click", nextScreen);
 document.querySelector("[data-maja-warning-accept]")?.addEventListener("click", (event) => {
@@ -2559,11 +2616,11 @@ const acceptButton = document.querySelector("#acceptDecision");
 const respectButton = document.querySelector("#respectDecision");
 const declineMessage = document.querySelector("#declineMessage");
 const declineMessages = [
-  "The universe disagrees.",
-  "The moon said try again.",
-  "Aymen is negotiating with destiny.",
-  "The button is getting smaller. Suspicious.",
-  "Still visible. Technically.",
+  "Really? Please think about it.",
+  "Are you sure? Maybe give the idea one more gentle thought.",
+  "Please, please think about it again.",
+  "Okay, one more tiny reconsideration before deciding?",
+  "I hear you. If it is still not yet, you can choose time to think.",
 ];
 
 function updateDecisionButtonState() {
@@ -2703,6 +2760,7 @@ function getFinalEmailPayload() {
       vancouverActivities: getActivityAnswersPayload(),
       talkTopics: getSelectedTalkTopicPayload(),
       explainRequests: Object.values(state.explainRequests),
+      submissionComment: state.submissionComment.trim(),
       notYet: {
         clicked: state.notYetClicked,
         clickCount: state.notYetClickCount,
@@ -2755,6 +2813,7 @@ acceptButton.addEventListener("click", async () => {
     notYetClicked: state.notYetClicked,
     notYetClickCount: state.notYetClickCount,
     notYetLastClickedAt: state.notYetLastClickedAt,
+    submissionComment: state.submissionComment.trim(),
   };
   saveState();
   showScreen("success");
@@ -2772,6 +2831,7 @@ respectButton.addEventListener("click", async () => {
     notYetClicked: state.notYetClicked,
     notYetClickCount: state.notYetClickCount,
     notYetLastClickedAt: state.notYetLastClickedAt,
+    submissionComment: state.submissionComment.trim(),
     note: "Maja wants to think about it.",
   };
   saveState();

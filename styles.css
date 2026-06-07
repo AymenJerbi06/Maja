@@ -79,7 +79,9 @@ a:focus-visible {
 a {
   color: var(--lavender-deep);
   font-weight: 800;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
 }
 
 a:hover {
@@ -697,9 +699,27 @@ h3 {
 
 .hint,
 .form-message,
-.disclaimer {
+.disclaimer,
+.selection-note {
   color: var(--muted);
   line-height: 1.55;
+}
+
+.selection-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 12px 0 0;
+}
+
+.selection-note::before {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  border: 2px solid rgba(201, 121, 142, 0.5);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.76);
+  content: "";
 }
 
 .password-row {
@@ -759,6 +779,46 @@ h3 {
   color: var(--ink);
   background: rgba(255, 253, 248, 0.84);
   font-weight: 850;
+}
+
+.interest-chip,
+.tab-button,
+.path-actions [data-select-route],
+.school-card [data-toggle-school],
+.talk-card [data-talk-topic],
+.activity-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.interest-chip::before,
+.tab-button::before,
+.path-actions [data-select-route]::before,
+.school-card [data-toggle-school]::before,
+.talk-card [data-talk-topic]::before,
+.activity-actions button::before {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  border: 2px solid rgba(201, 121, 142, 0.52);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.86);
+  box-shadow: 0 0 0 3px rgba(255, 253, 248, 0.24);
+  content: "";
+}
+
+.interest-chip.is-selected::before,
+.tab-button.is-active::before,
+.path-card.is-selected [data-select-route]::before,
+.school-card.is-selected [data-toggle-school]::before,
+.talk-card.is-selected [data-talk-topic]::before,
+.activity-actions button.is-selected::before {
+  border-color: var(--rose-dark);
+  background: var(--rose);
+  box-shadow:
+    inset 0 0 0 3px rgba(255, 253, 248, 0.9),
+    0 0 0 3px rgba(201, 121, 142, 0.12);
 }
 
 .decline-button {
@@ -1901,6 +1961,43 @@ ul {
   overflow: visible;
 }
 
+.submission-comment-panel {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid rgba(201, 121, 142, 0.22);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 248, 0.76), rgba(229, 201, 226, 0.24)),
+    rgba(255, 248, 237, 0.72);
+}
+
+.submission-comment-panel label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--deep);
+  font-size: 1.02rem;
+  font-weight: 900;
+}
+
+.submission-comment-panel p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.submission-comment-panel textarea {
+  width: 100%;
+  min-height: 132px;
+  resize: vertical;
+  border: 1px solid rgba(112, 82, 127, 0.24);
+  border-radius: 8px;
+  padding: 13px 14px;
+  color: var(--ink);
+  background: rgba(255, 253, 248, 0.9);
+  font: inherit;
+  line-height: 1.55;
+}
+
 .decision-actions {
   position: relative;
   min-height: 104px;
@@ -2162,6 +2259,22 @@ ul {
 }
 
 @media (max-width: 900px) {
+  .husband-card {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+
+  .husband-photo-note {
+    order: -1;
+    width: min(100%, 210px);
+    margin: 0 auto 4px;
+  }
+
+  .husband-photo-note img {
+    width: min(100%, 190px);
+    max-height: 230px;
+  }
+
   #maja-beauty .maja-profile-card {
     grid-template-columns: minmax(0, 1fr) minmax(104px, 30vw);
     column-gap: 14px;

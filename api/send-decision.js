@@ -44,6 +44,9 @@ function buildEmailHtml(payload) {
       <h2>Aymen explain requests</h2>
       <ul>${formatList(answers.explainRequests, (item) => item.label)}</ul>
 
+      <h2>Comments before submitting</h2>
+      <p>${escapeHtml(answers.submissionComment || "No comments written")}</p>
+
       <h2>Not yet button</h2>
       <p>
         Clicked: ${escapeHtml(answers.notYet?.clicked ? "yes" : "no")}<br />
@@ -69,6 +72,7 @@ function buildEmailText(payload) {
     `Vancouver activities: ${(answers.vancouverActivities || []).map((item) => `${item.title}: ${item.choice}`).join(", ") || "Nothing selected"}`,
     `Talk topics: ${(answers.talkTopics || []).map((item) => item.label).join(", ") || "Nothing selected"}`,
     `Explain requests: ${(answers.explainRequests || []).map((item) => item.label).join(", ") || "Nothing selected"}`,
+    `Comments before submitting: ${answers.submissionComment || "No comments written"}`,
     "",
     `Not yet clicked: ${answers.notYet?.clicked ? "yes" : "no"}`,
     `Not yet click count: ${answers.notYet?.clickCount || 0}`,

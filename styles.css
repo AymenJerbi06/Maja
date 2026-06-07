@@ -729,6 +729,26 @@ h3 {
   margin-top: 14px;
 }
 
+.password-hint-panel {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid rgba(201, 121, 142, 0.24);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(247, 216, 154, 0.24), rgba(229, 201, 226, 0.28)),
+    rgba(255, 248, 237, 0.72);
+}
+
+.password-hint-panel[hidden] {
+  display: none;
+}
+
+.password-hint-panel p:not(.mini-title) {
+  margin: 0 0 10px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .password-row input {
   min-height: 50px;
   min-width: 0;

@@ -1,5 +1,5 @@
 const STORAGE_KEY = "majaVancouverWebsiteState";
-const acceptedPasswords = new Set(["husband", "mayno", "maynou", "futurehusband", "goat"]);
+const acceptedPasswords = new Set(["husband", "minor", "mayno", "maynou", "futurehusband", "goat"]);
 
 const screens = [
   "maja-intro",
@@ -475,7 +475,13 @@ const localizedCopy = {
       open: "Open",
       waiting: "The little universe is waiting.",
       wrong: "Hmm... close, but the real ones know the nickname.",
+      wrongWithHint: "Still not it. Tiny hint unlocked below: try a nickname starting with H or M.",
       granted: "Access granted. Welcome to a possible future.",
+      hintTitle: "Need a tiny hint?",
+      hintBody: "It starts with one of these letters.",
+      hintH: "H...",
+      hintM: "M...",
+      prefixApplied: "Good start. Now finish the nickname.",
     },
     majaIntro: {
       kicker: "Before everything",
@@ -787,7 +793,13 @@ const localizedCopy = {
       open: "Otwórz",
       waiting: "Mały wszechświat czeka.",
       wrong: "Hmm... blisko, ale prawdziwi znają przezwisko.",
+      wrongWithHint: "To nadal nie to. Mała podpowiedź odblokowana niżej: spróbuj przezwiska zaczynającego się na H albo M.",
       granted: "Dostęp przyznany. Witaj w możliwej przyszłości.",
+      hintTitle: "Potrzebujesz małej podpowiedzi?",
+      hintBody: "Zaczyna się od jednej z tych liter.",
+      hintH: "H...",
+      hintM: "M...",
+      prefixApplied: "Dobry początek. Teraz dokończ przezwisko.",
     },
     majaIntro: {
       kicker: "Zanim zaczniemy",
@@ -1295,6 +1307,10 @@ const polishDeadlines = [
 
 const defaultState = {
   passwordAccepted: false,
+  passwordWrongAttempts: 0,
+  passwordSolvedOnAttempt: 0,
+  passwordGotRightFirstTry: false,
+  passwordAcceptedAt: "",
   language: "en",
   currentScreen: "maja-intro",
   mythAnswer: "",
@@ -1375,6 +1391,21 @@ function renderGateDedication() {
     ${copy.leadBefore} <span class="maja-name-target">${copy.leadName}</span>.
   `;
   setText("#majaPhotoCaption", copy.photoCaption);
+}
+
+function renderPasswordHint() {
+  const copy = ui().gate;
+  const panel = document.querySelector("#passwordHintPanel");
+  if (!panel) return;
+
+  const shouldShow = !state.passwordAccepted && state.passwordWrongAttempts >= 3;
+  panel.hidden = !shouldShow;
+  setText("#passwordHintPanel .mini-title", copy.hintTitle);
+  setText("#passwordHintPanel p:not(.mini-title)", copy.hintBody);
+
+  const hintButtons = document.querySelectorAll("#passwordHintPanel [data-password-prefix]");
+  if (hintButtons[0]) hintButtons[0].textContent = copy.hintH;
+  if (hintButtons[1]) hintButtons[1].textContent = copy.hintM;
 }
 
 let lastPhotoHeartAt = 0;
@@ -1550,9 +1581,18 @@ function applyLanguageContent() {
   const passwordInput = document.querySelector("#passwordInput");
   if (passwordInput) passwordInput.placeholder = copy.gate.placeholder;
   setText("#passwordForm button[type='submit']", copy.gate.open);
+  renderPasswordHint();
   const passwordMessage = document.querySelector("#passwordMessage");
-  if (passwordMessage && (!state.passwordAccepted || passwordMessage.textContent.includes("waiting") || passwordMessage.textContent.includes("czeka"))) {
-    passwordMessage.textContent = copy.gate.waiting;
+  if (passwordMessage) {
+    if (state.passwordAccepted) {
+      passwordMessage.textContent = copy.gate.granted;
+    } else if (state.passwordWrongAttempts >= 3) {
+      passwordMessage.textContent = copy.gate.wrongWithHint;
+    } else if (state.passwordWrongAttempts > 0) {
+      passwordMessage.textContent = copy.gate.wrong;
+    } else {
+      passwordMessage.textContent = copy.gate.waiting;
+    }
   }
 
   setText("#maja-intro .kicker", copy.majaIntro.kicker);
@@ -2433,6 +2473,12 @@ function renderDebug() {
   debugOutput.textContent = JSON.stringify(
     {
       users: { name: "Maja", passwordAccepted: state.passwordAccepted, language: currentLanguage(), createdAt: state.createdAt },
+      password: {
+        wrongAttempts: state.passwordWrongAttempts,
+        solvedOnAttempt: state.passwordSolvedOnAttempt,
+        gotRightFirstTry: state.passwordGotRightFirstTry,
+        acceptedAt: state.passwordAcceptedAt,
+      },
       quizAnswers: {
         interests: state.interests,
         selectedPath: state.selectedPath,
@@ -2490,15 +2536,36 @@ document.querySelector("#passwordForm").addEventListener("submit", (event) => {
   const normalized = normalizePassword(input.value);
 
   if (!acceptedPasswords.has(normalized)) {
-    message.textContent = ui().gate.wrong;
+    state.passwordWrongAttempts += 1;
+    state.passwordSolvedOnAttempt = 0;
+    state.passwordGotRightFirstTry = false;
+    saveState();
+    renderPasswordHint();
+    message.textContent = state.passwordWrongAttempts >= 3 ? ui().gate.wrongWithHint : ui().gate.wrong;
     input.select();
     return;
   }
 
   state.passwordAccepted = true;
+  state.passwordSolvedOnAttempt = state.passwordWrongAttempts + 1;
+  state.passwordGotRightFirstTry = state.passwordWrongAttempts === 0;
+  state.passwordAcceptedAt = new Date().toISOString();
   message.textContent = ui().gate.granted;
+  renderPasswordHint();
   saveState();
   window.setTimeout(showApp, 450);
+});
+
+document.querySelector("#passwordHintPanel")?.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-password-prefix]");
+  if (!button) return;
+
+  const input = document.querySelector("#passwordInput");
+  const message = document.querySelector("#passwordMessage");
+  input.value = button.dataset.passwordPrefix || "";
+  input.focus();
+  input.setSelectionRange(input.value.length, input.value.length);
+  if (message) message.textContent = ui().gate.prefixApplied;
 });
 
 document.querySelectorAll("[data-language]").forEach((button) => {
@@ -2729,6 +2796,12 @@ function getFinalEmailPayload() {
     user: {
       name: "Maja",
       language: currentLanguage(),
+    },
+    password: {
+      wrongAttempts: state.passwordWrongAttempts,
+      solvedOnAttempt: state.passwordSolvedOnAttempt,
+      gotRightFirstTry: state.passwordGotRightFirstTry,
+      acceptedAt: state.passwordAcceptedAt,
     },
     finalDecision: state.finalDecision,
     answers: {

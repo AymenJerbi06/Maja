@@ -15,6 +15,7 @@ function formatList(items, formatter = (item) => item) {
 function buildEmailHtml(payload) {
   const decision = payload.finalDecision?.accepted ? "Accepted the mission" : "Wants time to think";
   const answers = payload.answers || {};
+  const password = payload.password || {};
 
   return `
     <div style="font-family: Georgia, serif; color: #2b182f; line-height: 1.6;">
@@ -22,6 +23,14 @@ function buildEmailHtml(payload) {
       <p><strong>Decision:</strong> ${escapeHtml(decision)}</p>
       <p><strong>Submitted:</strong> ${escapeHtml(payload.submittedAt)}</p>
       <p><strong>Language used:</strong> ${escapeHtml(payload.user?.language || "unknown")}</p>
+
+      <h2>Password attempts</h2>
+      <p>
+        Wrong attempts: ${escapeHtml(password.wrongAttempts ?? 0)}<br />
+        Solved on attempt: ${escapeHtml(password.solvedOnAttempt || "unknown")}<br />
+        Got it right first try: ${escapeHtml(password.gotRightFirstTry ? "yes" : "no")}<br />
+        Accepted at: ${escapeHtml(password.acceptedAt || "unknown")}
+      </p>
 
       <h2>Academic route</h2>
       <p>${escapeHtml(answers.academicRoute?.title || "No route selected")}</p>
@@ -59,11 +68,17 @@ function buildEmailHtml(payload) {
 
 function buildEmailText(payload) {
   const answers = payload.answers || {};
+  const password = payload.password || {};
   const lines = [
     "Maja Vancouver Website Result",
     `Decision: ${payload.finalDecision?.accepted ? "Accepted the mission" : "Wants time to think"}`,
     `Submitted: ${payload.submittedAt}`,
     `Language used: ${payload.user?.language || "unknown"}`,
+    "",
+    `Password wrong attempts: ${password.wrongAttempts ?? 0}`,
+    `Password solved on attempt: ${password.solvedOnAttempt || "unknown"}`,
+    `Password got right first try: ${password.gotRightFirstTry ? "yes" : "no"}`,
+    `Password accepted at: ${password.acceptedAt || "unknown"}`,
     "",
     `Academic route: ${answers.academicRoute?.title || "No route selected"}`,
     `Interests: ${(answers.interests || []).map((item) => item.label).join(", ") || "Nothing selected"}`,
